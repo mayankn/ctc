@@ -55,6 +55,7 @@ public class ALinkedList {
             head = n;
         } else {
             n.setNext(head);
+            head = n;
         }
         size++;
     }
