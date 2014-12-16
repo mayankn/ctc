@@ -1,4 +1,4 @@
-package rotate;
+package arraysnstrings;
 
 /**
  * Created by mayanknarasimhan on 15/12/14.

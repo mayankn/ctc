@@ -1,4 +1,4 @@
-package permutation;
+package arraysnstrings;
 
 import java.util.HashMap;
 

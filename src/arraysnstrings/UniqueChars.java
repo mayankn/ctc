@@ -1,4 +1,4 @@
-package isunique;
+package arraysnstrings;
 
 import java.util.HashMap;
 

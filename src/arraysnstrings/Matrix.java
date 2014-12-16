@@ -1,4 +1,4 @@
-package matrix;
+package arraysnstrings;
 
 import java.util.ArrayList;
 import java.util.HashSet;
