@@ -45,6 +45,10 @@ public class Stack {
         return size;
     }
 
+    public boolean isEmpty () {
+        return top == null;
+    }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

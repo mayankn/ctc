@@ -9,33 +9,41 @@ import linkedlist.Node;
  * An implementation of the Queue (FIFO) data structure
  */
 public class Queue {
-    Node first, last;
+    Node head, tail;
     int size;
 
     public Queue () {
-        first = null;
-        last = null;
+        head = null;
+        tail = null;
         size = 0;
     }
 
     public void enqueue (int data) {
         Node n = new Node(data);
-        if (last != null) {
-            last.setNext(n);
-            last = n;
+        if (tail != null) {
+            tail.setNext(n);
+            tail = n;
         } else {
-            last = n;
-            first = last;
+            tail = n;
+            head = tail;
         }
         size++;
     }
 
     public int dequeue () {
         int data = -1;
-        if (first != null) {
-            data = first.getData();
-            first = first.getNext();
+        if (head != null) {
+            data = head.getData();
+            head = head.getNext();
             size--;
+        }
+        return data;
+    }
+
+    public int peek () {
+        int data = -1;
+        if (head != null) {
+            data = head.getData();
         }
         return data;
     }
@@ -47,7 +55,7 @@ public class Queue {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        Node currentNode = first;
+        Node currentNode = head;
         while (currentNode != null) {
             sb.append(currentNode.getData());
             currentNode = currentNode.getNext();
