@@ -8,7 +8,7 @@ package treesngraphs;
  */
 public class BinaryTree {
     int data;
-    BinaryTree left, right;
+    BinaryTree left, right, parent;
 
     public BinaryTree () {
         left = null;
@@ -33,5 +33,24 @@ public class BinaryTree {
         System.out.print(root.data + " ");
         printPreOrder(root.left);
         printPreOrder(root.right);
+    }
+
+    public static void setParents (BinaryTree root) {
+        root.parent = setParentsHelper(root);
+    }
+
+    public static BinaryTree setParentsHelper (BinaryTree tree) {
+        if (tree == null)
+            return null;
+
+        if (tree.left != null) {
+            tree.left.parent = tree;
+            setParentsHelper(tree.left);
+        }
+        if (tree.right != null) {
+            tree.right.parent = tree;
+            setParentsHelper(tree.right);
+        }
+        return null;
     }
 }
